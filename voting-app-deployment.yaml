@@ -1,0 +1,24 @@
+apiversion : apps/v1
+kind : Deployment
+
+metadata : 
+  name: vote-app-deploy
+  labels : 
+    name: vote-app-deploy
+    app : voting-prod-app
+specs : 
+  replicas : 2
+    selector : 
+      matchlables : 
+        name: nginx-app-pod
+        app : nginx-app-prod
+  template : 
+    metadata:
+      name: nginx
+      lables: 
+       -name:nginx-app
+    specs: 
+      containers:
+        name: nginx-app
+        image: nginx
+      
