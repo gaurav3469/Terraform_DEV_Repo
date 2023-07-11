@@ -1,0 +1,14 @@
+apiversion : apps/v1
+
+kind : pod
+
+metadata : 
+  name : result-pod
+  app : result-app-prod
+
+spec : 
+  
+  containers : 
+    name :redis-image
+    image : redis
+     -containerport : 6372

@@ -1,0 +1,17 @@
+apiversion : v1
+kind : Service
+
+metadata : 
+  name: vote-service-app
+  
+specs : 
+  type : nodeport
+  ports :
+    - port: 80
+      targetport : 80
+      nodeport : 30004
+  selector : 
+    matchlables : 
+    name: nginx-app-Pod
+    app : nginx-app-prod
+  

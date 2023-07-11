@@ -1,0 +1,25 @@
+apiversion : apps/v1
+
+kind : deployment
+
+metadata : 
+  name : result-deploy
+  app : result-app-prod
+
+spec : 
+  replicas : 2
+  selector :
+    matchlabels :
+      name : result-pod
+      app : result-app-prod
+  template :
+    metadata : 
+      name : result-pod
+      app : result-app-prod
+
+    spec : 
+  
+      containers : 
+        name : redis-image
+        image : redis
+       -containerport : 6372
